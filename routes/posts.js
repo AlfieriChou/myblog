@@ -122,6 +122,20 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
     .catch(next);
 });
 
+// GET /posts/:postId/remove 删除一篇文章
+router.get('/:postId/remove', checkLogin, function(req, res, next) {
+  var postId = req.params.postId;
+  var author = req.session.user._id;
+
+  PostModel.delPostById(postId, author)
+    .then(function () {
+      req.flash('success', '删除文章成功');
+      // 删除成功后跳转到主页
+      res.redirect('/posts');
+    })
+    .catch(next);
+});
+
 // POST /posts/:postId/comment 创建一条留言
 router.post('/:postId/comment', checkLogin, function(req, res, next) {
   var author = req.session.user._id;
