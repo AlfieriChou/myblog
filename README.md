@@ -1,4 +1,7 @@
 ##myblog
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/AlfieriChou/myblog.svg)](https://greenkeeper.io/)
+
 由于对之前那个blog的功能页面什么的不满意，所以又重新开发了一个博客系统。
 
 ##myblog 启动
